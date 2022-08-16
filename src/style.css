@@ -1,12 +1,19 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 .header {
-  display: flex;
-  align-content: flex-start;
+  padding-top: 10px;
+  align-content: center;
+  text-align: center;
 }
 
 body {
   background-color: green;
+}
+
+.TitleSelection {
+  padding-top: 25px;
+  align-content: center;
+  text-align: center;
 }
 
 #cardDisplay {
@@ -16,12 +23,12 @@ body {
 
 .cardbody {
   background-color: white;
-  width: 150px;
+  width: 140px;
   height: 200px;
-  margin-top: 100px;
+  margin-top: 20px;
   border-radius: 10px;
-  padding: 20px;
-  padding-top: 15px;
+  padding: 10px;
+  padding-top: 10px;
 }
 
 #upperIcon {
@@ -29,7 +36,7 @@ body {
 }
 
 #number {
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
 }
 

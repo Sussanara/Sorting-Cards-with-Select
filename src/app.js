@@ -2,11 +2,9 @@
 import "bootstrap";
 import "./style.css";
 
-/* Numbers and Suits of the Deck */
 const suits = ["spade", "heart", "diamond", "clover"];
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-/* Main Function */
 function generateCardArray(number) {
   let cardArray = [];
   for (let i = 0; i < number; i++) {
@@ -14,7 +12,7 @@ function generateCardArray(number) {
   }
   return cardArray;
 }
-/* Random Card picker */
+
 function cardPick() {
   var numberSuit = Math.floor(Math.random() * 4);
   var numberNum = Math.floor(Math.random() * 13);
@@ -27,7 +25,6 @@ function cardPick() {
 let selectionNumber = -1;
 
 function selectionSortCards(array) {
-  /* Selection Sort Algorithm */
   console.log(array);
   for (let i = 0; i < array.length - 1; i++) {
     selectionNumber++;
@@ -45,7 +42,6 @@ function selectionSortCards(array) {
   console.log(array);
 }
 
-/* Rendering Cards Test */
 function toStringConverter(number) {
   if (number === 11) {
     return "J";
@@ -61,11 +57,10 @@ function toStringConverter(number) {
 function renderCardArray(array) {
   var cardID = 0;
   for (let card of array) {
-    /* Unique DIV creation for card body*/
     const cardDiv = document.createElement("div");
     cardDiv.setAttribute("id", "div" + cardID);
     cardDiv.setAttribute("class", "cardbody");
-    /* Card div element generation */
+
     const cardUpperIcon = document.createElement("div");
     cardUpperIcon.setAttribute("id", "upperIcon");
 
@@ -99,7 +94,6 @@ function renderCardArray(array) {
       cardNumber.innerHTML = toStringConverter(card[1]);
     }
 
-    /* Card Pushing into HTML */
     const cardDisplay = document.getElementById("cardDisplay");
     cardDisplay.appendChild(cardDiv);
     cardDiv.appendChild(cardUpperIcon);
@@ -116,16 +110,15 @@ function renderCardArraySelection(array) {
   selectionDiv.style.display = "flex";
   selectionDiv.style.justifyContent = "space-evenly";
   document.body.appendChild(selectionDiv);
-  let selectionId = document.createElement("h1");
+  let selectionId = document.createElement("h5");
   selectionId.innerHTML = selectionNumber;
-  selectionId.style.paddingTop = "170px";
+  selectionId.style.paddingTop = "150px";
   selectionDiv.appendChild(selectionId);
   for (let card of array) {
-    /* Unique DIV creation for card body*/
     const cardDiv = document.createElement("div");
     cardDiv.setAttribute("id", "div" + cardID);
     cardDiv.setAttribute("class", "cardbody");
-    /* Card div element generation */
+
     const cardUpperIcon = document.createElement("div");
     cardUpperIcon.setAttribute("id", "upperIcon");
 
@@ -134,7 +127,7 @@ function renderCardArraySelection(array) {
 
     const cardLowerIcon = document.createElement("div");
     cardLowerIcon.setAttribute("id", "lowerIcon");
-    /* Return of Special Characters */
+
     if (card[0] == "heart") {
       cardUpperIcon.style.color = "red";
       cardNumber.style.color = "red";
@@ -159,7 +152,6 @@ function renderCardArraySelection(array) {
       cardNumber.innerHTML = toStringConverter(card[1]);
     }
 
-    /* Card Pushing into HTML */
     cardDiv.appendChild(cardUpperIcon);
     cardDiv.appendChild(cardNumber);
     cardDiv.appendChild(cardLowerIcon);
@@ -167,8 +159,6 @@ function renderCardArraySelection(array) {
     cardID++;
   }
 }
-
-/* selectionSortCards(cardArray); */
 
 var drawButton = document.querySelector("#drawButton");
 var sortButton = document.querySelector("#sortButton");
